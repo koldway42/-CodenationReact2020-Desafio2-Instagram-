@@ -1,0 +1,157 @@
+[
+    {
+        "id": 1,
+        "ImageFile": 1,
+        "userId": 1,
+        "createdAt": "2020-03-10T18:26:44.511Z",
+        "likes": [
+            {
+                "userId": 2,
+                "createdAt": "2020-03-10T18:27:43.511Z"
+            },
+            {
+                "userId": 3,
+                "createdAt": "2020-03-10T18:28:43.511Z"
+            },
+            {
+                "userId": 6,
+                "createdAt": "2020-03-10T18:29:43.511Z"
+            },
+            {
+                "userId": 2,
+                "createdAt": "2020-03-10T18:30:43.511Z"
+            }   
+        ]
+    },
+    {
+        "id": 2,
+        "ImageFile": 2,
+        "userId": 1,
+        "createdAt": "2020-04-10T18:26:43.511Z",
+        "likes": [
+            {
+                "userId": 4,
+                "createdAt": "2020-04-10T18:27:43.511Z"
+            },
+            {
+                "userId": 3,
+                "createdAt": "2020-04-10T18:28:43.511Z"
+            },
+            {
+                "userId": 2,
+                "createdAt": "2020-04-10T18:29:43.511Z"
+            },
+            {
+                "userId": 5,
+                "createdAt": "2020-04-10T18:30:43.511Z"
+            }   
+        ]
+    },
+    {
+        "id": 3,
+        "ImageFile": 3,
+        "userId": 1,
+        "createdAt": "2020-05-10T18:32:43.511Z",
+        "likes": [
+            {
+                "userId": 4,
+                "createdAt": "2020-03-10T18:33:43.511Z"
+            },
+            {
+                "userId": 3,
+                "createdAt": "2020-03-10T18:34:43.511Z"
+            },
+            {
+                "userId": 2,
+                "createdAt": "2020-03-10T18:35:43.511Z"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "ImageFile": 1,
+        "userId": 2,
+        "createdAt": "2019-03-10T18:32:43.511Z",
+        "likes": [
+            {
+                "userId": 4,
+                "createdAt": "2019-03-10T18:33:43.511Z"
+            },
+            {
+                "userId": 3,
+                "createdAt": "2019-03-10T18:34:43.511Z"
+            },
+            {
+                "userId": 1,
+                "createdAt": "2019-03-10T18:35:43.511Z"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "ImageFile": 2,
+        "userId": 2,
+        "createdAt": "2019-04-10T18:32:43.511Z",
+        "likes": [
+            {
+                "userId": 1,
+                "createdAt": "2019-04-10T18:33:43.511Z"
+            },
+            {
+                "userId": 6,
+                "createdAt": "2019-04-10T18:34:43.511Z"
+            },
+            {
+                "userId": 4,
+                "createdAt": "2019-04-10T18:35:43.511Z"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "ImageFile": 1,
+        "userId": 3,
+        "createdAt": "2018-04-10T18:32:43.511Z",
+        "likes": [
+            {
+                "userId": 1,
+                "createdAt": "2018-04-10T18:32:43.511Z"
+            },
+            {
+                "userId": 2,
+                "createdAt": "2018-04-10T18:32:43.511Z"
+            },
+            {
+                "userId": 4,
+                "createdAt": "2018-04-10T18:32:43.511Z"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "ImageFile": 1,
+        "userId": 5,
+        "createdAt": "2077-04-10T18:32:43.511Z",
+        "likes": [
+            {
+                "userId": 1,
+                "createdAt": "2077-04-10T18:33:43.511Z"
+            },
+            {
+                "userId": 3,
+                "createdAt": "2077-04-10T18:34:43.511Z"
+            },
+            {
+                "userId": 2,
+                "createdAt": "2077-04-10T18:35:43.511Z"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "ImageFile": 2,
+        "userId": 5,
+        "createdAt": "2076-04-10T18:32:43.511Z",
+        "likes": []
+    }
+]

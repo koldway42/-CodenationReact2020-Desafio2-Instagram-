@@ -1,0 +1,48 @@
+[
+    {
+        "id": 1,
+        "name": "Black Panther",
+        "profile_picture": "black-panther",
+        "stories": [
+            {"viewed": false},
+            {"viewed": true},
+            {"viewed": true}
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Bruce",
+        "profile_picture": "bruce",
+        "stories": []
+    },
+    {
+        "id": 3,
+        "name": "Carol",
+        "profile_picture": "carol",
+        "stories": [
+            {"viewed": true},
+            {"viewed": true},
+            {"viewed": true}
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Domino",
+        "profile_picture": "domino",
+        "stories": [
+            {"viewed": true}
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Yoda",
+        "profile_picture": "yoda",
+        "stories": [{"viewed": false}]
+    },
+    {
+        "id": 6,
+        "name": "Gamora",
+        "profile_picture": "gamora",
+        "stories": []
+    }
+]

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html class="no-js" lang="pt-br">
+	<head>
+		<meta charset="utf-8" />
+		<title>Instagram Codenation</title>
+		<meta name="description" content="" />
+		<link rel="shortcut icon" type="image/png" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link rel="stylesheet" href="assets/css/normalize.css" />
+		<link rel="stylesheet" href="assets/css/fontawesome.min.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+		<header id="header">
+			<div class="container">
+				<a href="#">
+					<img class="header__logo" src="assets/img/instagram-logo.svg" alt="">
+				</a>
+				<button class="header__post">
+					<i class="far fa-paper-plane"></i>
+				</button>
+			</div>
+		</header>
+		<main id="main">
+			<div class="container">
+				<section class="stories">
+					<div class="stories__container">
+
+					</div>
+				</section>
+			</div>
+			<div class="container">
+				<section class="feed">
+
+				</section>
+			</div>
+		</main>
+		<script>
+			function handleGetUsers() {
+				return fetch("assets/data/users.json")
+					.then(resp => resp.json())
+					.then(data => data)
+			}
+
+			function handleGetPosts() {
+				return fetch("assets/data/posts.json")
+					.then(resp => resp.json())
+					.then(data => data)
+			}
+
+			function createNewStory(user) {
+				let notViewedStories = user.stories.filter(el => el.viewed === false).length;
+
+				return user.stories.length != 0 ? `
+					<a href="#" class="user__photo ${notViewedStories ? "user__photo--hasNew" : ""}">
+						<span class="user__photo__wrapper">
+							<img src="assets/img/users/${user.profile_picture}-profile.jpg">
+						</span>
+					</a>
+				` : "";
+			}
+
+			function createNewPost(post, users) {
+				let author = users.filter(user => user.id === post.userId)[0];
+				let lastLike = null;
+				if(post.likes.length > 0) {
+					lastLike = post.likes.sort((a, b) => {
+						return a.createdAt > b.createdAt ? 1 : -1;
+					}).reverse()[0]
+
+					lastLike = users.filter(user => user.id === lastLike.userId)[0];
+				}
+				
+
+				return `
+					<article class="post">
+						<header class="post__header">
+							<div class="user">
+								<a href="#" class="user__photo">
+									<img src="assets/img/users/${author.profile_picture}-profile.jpg">
+								</a>
+								<a href="#" class="user__name">${author.name}</a>
+							</div>
+							<button class="post__context">
+								<i class="fas fa-ellipsis-h"></i>
+							</button>
+						</header>
+						<figure class="post__figure">
+							<img src="assets/img/posts/${author.profile_picture}/${author.profile_picture}-${post.ImageFile}.jpg">
+						</figure>
+						<nav class="post__controls">
+							<button class="post__control">
+								<i class="far fa-heart"></i>
+							</button>
+							<button class="post__control">
+								<i class="far fa-comment"></i>
+							</button>
+							<button class="post__control">
+								<i class="far fa-bookmark"></i>
+							</button>
+						</nav>
+						<div class="post__status">
+						${lastLike ? 
+						`
+							<a href="#" class="user__photo">
+								<img src="assets/img/users/${lastLike.profile_picture}-profile.jpg">
+							</a>
+							<span>
+								curtido por 
+								<a href="#">${lastLike.name} </a>
+								e outras <a href="#">${post.likes.length - 1} pessoas</a>
+							</span>
+						</div>
+						` : "<span>Ninguém curtiu isso ainda</span>"
+						}
+							
+					</article>
+				`
+			}
+
+			(async function startup() {
+				let users = await handleGetUsers();
+				let posts = await handleGetPosts();
+				
+				users.forEach(user => {
+					document.querySelector(".stories .stories__container")
+						.innerHTML += createNewStory(user);
+				});
+
+				posts = posts.sort((a, b) => {
+					return a.createdAt > b.createdAt ? 1 : -1;
+				}).reverse();
+
+				posts.forEach(post => {
+					document.querySelector(".container .feed")
+						.innerHTML += createNewPost(post, users)
+				})
+
+			} ());
+		</script>
+	</body>
+</html>
